@@ -1,1 +1,1 @@
-# Bronze Theme
+# Silver Theme
