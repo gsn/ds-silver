@@ -94,11 +94,9 @@
             </div>
         </div>
     </div>
-</div>
-<div class="row printFooter">
-    <p>Trouble printing manufacturer coupons? Download and install the Coupon Printing Plugin:<br />
-        <a href="http://cdn.coupons.com/ftp.coupons.com/Partners/CouponPrinter.exe">Windows Coupon Printing Plugin</a>
-        <span>| </span>
-        <a href="http://cdn.coupons.com/ftp.coupons.com/safari/MacCouponPrinter.dmg">Mac Coupon Printing Plugin</a>
-    </p>
+    <div class="hidden" style="display:none">
+      <div data-gsn-modal="getContentUrl('../common/views/modal-gcprinter-notinstalled.html')" data-show-if="printer.notinstalled"></div>
+      <div data-gsn-modal="getContentUrl('../common/views/modal-gcprinter-notsupported.html')" data-show-if="printer.notsupported"></div>
+      <div data-gsn-modal="getContentUrl('../common/views/modal-gcprinter-blocked.html')" data-show-if="printer.blocked"></div>
+    </div>
 </div>
