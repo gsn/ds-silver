@@ -1,5 +1,5 @@
 ﻿<div class="row" data-ctrl-coupon-classic="">
-    <div class="col-md-12 couponTabs noPadWidth pull-left"  data-ng-init="couponType = 'digital';sortByName = 'About to Expire';">
+    <div class="col-md-12 couponTabs noPadWidth pull-left"  data-ng-init="couponType = 'digital';vm.sortByName = 'About to Expire';">
     <ul class="nav nav-tabs" data-ng-include="getThemeUrl('/views/engine/coupons-tabs.html')"></ul>
         <div class="row tabcontent">
           <div class="col-md-10 col-sm-12">
@@ -23,30 +23,30 @@
                       <span>Sort By:</span>
                           <div class="btn-group dropdown" dropdown>
                               <button type="button" class="btn btn-default btnSilver dropdown-toggle" data-toggle="dropdown">
-                                  {{sortByName}} <span class="caret"></span>
+                                  {{vm.sortByName}} <span class="caret"></span>
                               </button>
                               <ul class="dropdown-menu" role="menu">
-                                  <li><a href="javascript:void(0)" data-ng-click="sortBy = 'EndDate';sortByName='About to Expire'">About to Expire</a></li>
-                                  <li><a href="javascript:void(0)" data-ng-click="sortBy = '-StartDate';sortByName='Newest'">Newest</a></li>
-                                  <li><a href="javascript:void(0)" data-ng-click="sortBy = '-TopTagLine';sortByName='Savings'">Savings</a></li>
-                                  <li><a href="javascript:void(0)" data-ng-click="sortBy = 'BrandName';sortByName='Brand'">Brand</a></li>
-                                  <li><a href="javascript:void(0)" data-ng-click="sortBy = 'CategoryName';sortByName='Department'">Department</a></li>
+                                  <li><a href="javascript:void(0)" data-ng-click="vm.sortBy = 'EndDate';vm.sortByName='About to Expire'">About to Expire</a></li>
+                                  <li><a href="javascript:void(0)" data-ng-click="vm.sortBy = '-StartDate';vm.sortByName='Newest'">Newest</a></li>
+                                  <li><a href="javascript:void(0)" data-ng-click="vm.sortBy = '-TopTagLine';vm.sortByName='Savings'">Savings</a></li>
+                                  <li><a href="javascript:void(0)" data-ng-click="vm.sortBy = 'BrandName';vm.sortByName='Brand'">Brand</a></li>
+                                  <li><a href="javascript:void(0)" data-ng-click="vm.sortBy = 'CategoryName';vm.sortByName='Department'">Department</a></li>
                               </ul>
                           </div>
                       </div>
                       <div class="pull-right searchBy">
                       <span>Search By:</span>
                           <div class="searchField btn-group">
-                              <input class="searchfield btn btn-default" type="text" placeholder="enter keyword" data-ng-model="filterBy" name="filterby" />
+                              <input class="searchfield btn btn-default" type="text" placeholder="enter keyword" data-ng-model="vm.filterBy" name="vm.filterby" />
                           </div>
                       </div>
                   </div>
               </div>
               <div>
-                  <div class="col-md-4 noCoupons" data-ng-show="selectedCoupons.items.length <= 0 && filterBy">No results returned.</div>
+                  <div class="col-md-4 noCoupons" data-ng-show="selectedCoupons.items.length <= 0 && vm.filterBy">No results returned.</div>
                   <div data-gsn-spinner="{radius:30, width:8, length: 16}" data-show-if="selectedCoupons.items.length <= 0 && !selectedCoupons.cardCouponOnly"></div>
                   <div data-ng-show="selectedCoupons.items.length == 0">No items found</div>
-                  <div data-ng-show="selectedCoupons.targeted.length > 0 && sortBy == 'EndDate'">
+                  <div data-ng-show="selectedCoupons.targeted.length > 0 && vm.sortBy == 'EndDate'">
                       Limited Time Coupons
                       <br />
                       <div class="noPadWidth col-md-4 col-sm-4 col-xs-12" data-ng-include="getThemeUrl('/views/engine/coupons-digital-item.html')" data-ng-repeat="item in selectedCoupons.targeted"></div>
