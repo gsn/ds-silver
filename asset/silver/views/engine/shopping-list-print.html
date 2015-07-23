@@ -74,8 +74,8 @@
                     <tr>
                         <td>
                             <div class="printCouponProductCode" data-ng-show="item.ProductCode"><strong>PLU:</strong>{{item.ProductCode}}</div>
-                            <div class="printCouponDescription18Bold">{{item.Description1}}</div>
-                            <div class="printCouponDescription16Bold">{{item.Description2}}</div>
+                            <div class="printCouponDescription18Bold">{{item.Description1 | replaceWith:'Â':'gi':''}}</div>
+                            <div class="printCouponDescription16Bold">{{item.Description2 | replaceWith:'Â':'gi':''}}</div>
                             <div class="printCouponDescription9">{{item.TopTagLine}}</div>
                             <div class="printCouponDescription9">
                                 {{item.Description3}}
