@@ -38,8 +38,8 @@
                             <div class="singleCoupon">
                                 <img data-ng-src="{{item.SmallImageUrl || getThemeUrl('/images/no_image.jpg')}}" />
                                 <div class="description">
-                                    <h4>{{item.Description1}}</h4>
-                                    <p>{{item.Description2}}</p>
+                                    <h4 data-ng-bind-html="item.Description1"></h4>
+                                    <p data-ng-bind-html="item.Description2"></p>
                                     <h5>expires: {{item.EndDate | date: 'M / dd / yyyy'}}</h5>
                                 </div>
                                 <div class="printCouponBtns">
@@ -63,9 +63,9 @@
     
     
     <div class="hidden" style="display:none">
-      <div data-gsn-modal="getContentUrl('/../common/views/modal-gcprinter-notinstalled.html')" data-show-if="printer.notinstalled"></div>
-      <div data-gsn-modal="getContentUrl('/../common/views/modal-gcprinter-notsupported.html')" data-show-if="printer.notsupported"></div>
-      <div data-gsn-modal="getContentUrl('/../common/views/modal-gcprinter-blocked.html')" data-show-if="printer.blocked"></div>
+      <div data-gsn-modal="getContentUrl('/../common/views/modal-gcprinter-notinstalled.html')" data-show-if="printer.notinstalled" data-event-to-close="gsnevent:gcprinter-ready"></div>
+      <div data-gsn-modal="getContentUrl('/../common/views/modal-gcprinter-notsupported.html')" data-show-if="printer.notsupported" data-event-to-close="gsnevent:gcprinter-ready"></div>
+      <div data-gsn-modal="getContentUrl('/../common/views/modal-gcprinter-blocked.html')" data-show-if="printer.blocked" data-event-to-close="gsnevent:gcprinter-ready"></div>
       <div data-gsn-modal="getContentUrl('/../common/views/modal-gcprinter-printed.html')" data-show-if="printer.printed != null"></div>
     </div>
 </div>

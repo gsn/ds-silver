@@ -24,7 +24,7 @@
         <div data-ng-repeat="item in topitems | pagingFilter:5:0">
             <ul>
                 <li class="sLProduct"><img data-ng-src="{{item.SmallImageUrl || getContentUrl('/images/no_image.jpg')}}" /><span class="price">{{item.PriceString}}</span></li>
-                <li class="sLDescription"><span data-ng-bind-html="item.Description | trustedHtml"></span>    
+                <li class="sLDescription"><span data-ng-bind-html="item.Description"></span>    
                     <p data-ng-show="item.ItemTypeId == 13">Redeemable one time only.</p>
                     <br />
                     <span data-ng-show="item.IsCoupon">expires: {{item.EndDate | date: 'M / dd / yyyy'}}</span>
