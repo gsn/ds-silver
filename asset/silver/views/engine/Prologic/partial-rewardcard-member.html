@@ -71,7 +71,7 @@
             <div>
               <select name="StateField" class="dropList" data-ng-model="primaryLoyaltyAddress.Province"> 
                 <option value="-1">-- select a state --</option>
-                <option data-ng-repeat="state in states" value="{{state.Abbreviation}}">{{state.FullName}}</option>
+                <option data-ng-repeat="state in states" data-ng-selected="primaryLoyaltyAddress.Province == state.Abbreviation" value="{{state.Abbreviation}}">{{state.FullName}}</option>
               </select>
             </div>
           </div>
